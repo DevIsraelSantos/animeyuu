@@ -1,22 +1,14 @@
-"use client";
-
-import { useSession } from "@/lib/auth-client";
+import { LogoutButton } from "@/components/auth/logout-button";
+import { Suspense } from "react";
+import { ProfileName } from "./profile-name";
 
 export default function ProfilePage() {
-  const session = useSession() ?? null;
-
   return (
     <div>
-      <h1>Profile</h1>
-      <pre>
-        {JSON.stringify(
-          {
-            session,
-          },
-          null,
-          Infinity,
-        )}
-      </pre>
+      <LogoutButton />
+      <Suspense fallback={<h1>Carregando perfil...</h1>}>
+        <ProfileName />
+      </Suspense>
     </div>
   );
 }

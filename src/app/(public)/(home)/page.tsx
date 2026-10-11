@@ -1,21 +1,9 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { signIn } from "@/lib/auth-client";
+"use server";
+import { DiscordLoginButton } from "@/components/auth/discord-login-button";
 import Image from "next/image";
 import Link from "next/link";
-import { useTransition } from "react";
 
-export default function HomePage() {
-  const [isPending, startTransition] = useTransition();
-
-  function onClickLogin() {
-    startTransition(async () => {
-      await signIn.social({
-        provider: "discord",
-      });
-    });
-  }
-
+export default async function HomePage() {
   return (
     <div className="min-h-screen bg-zinc-950 font-sans text-zinc-100">
       <header className="border-b border-white/10">
@@ -39,16 +27,10 @@ export default function HomePage() {
             </a>
           </div>
 
-          <a
-            href="#comecar"
-            className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-zinc-950 transition hover:bg-violet-200"
-          >
-            Criar minha curadoria
-          </a>
+          <DiscordLoginButton />
         </nav>
       </header>
-      <Button onClick={onClickLogin}>aqui</Button>
-      <span>{isPending ? "carregando" : "--"}</span>
+
       <main>
         <section className="relative overflow-hidden">
           <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-violet-700/20 blur-[120px]" />
