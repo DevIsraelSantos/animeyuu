@@ -1,3 +1,4 @@
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "cn";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Roboto } from "next/font/google";
@@ -37,7 +38,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         interHeading.variable,
       )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <TooltipProvider>{children}</TooltipProvider>
+      </body>
     </html>
   );
 }
