@@ -29,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="pt-BR"
       className={cn(
+        "dark",
         "h-full",
         "antialiased",
         geistSans.variable,
