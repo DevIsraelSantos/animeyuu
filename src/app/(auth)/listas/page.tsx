@@ -1,4 +1,4 @@
-export default function ListasPage() {
+export default async function ListasPage() {
   return (
     <div>
       <h1>ListasPage</h1>

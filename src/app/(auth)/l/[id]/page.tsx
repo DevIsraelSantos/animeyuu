@@ -1,4 +1,4 @@
-export default function ListaSharedIDPage() {
+export default async function ListaSharedIDPage() {
   return (
     <div>
       <h1>ListaSharedIDPage</h1>

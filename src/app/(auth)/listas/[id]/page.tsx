@@ -1,4 +1,4 @@
-export default function ListasIdPage() {
+export default async function ListasIdPage() {
   return (
     <div>
       <h1>ListasIdPage</h1>
